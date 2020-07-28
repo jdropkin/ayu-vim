@@ -14,7 +14,6 @@ let g:colors_name = "ayu"
 
 let s:palette = {}
 
-"let s:palette.bg        = {'dark': "#0F1419",  'light': "#FAFAFA",  'mirage': "#212733"}
 let s:palette.bg        = {'dark': "#0F1419",  'light': "#FAFAFA",  'mirage': "#242636"}
 
 let s:palette.comment   = {'dark': "#5C6773",  'light': "#ABB0B6",  'mirage': "#86919E"}
@@ -33,7 +32,8 @@ let s:palette.accent    = {'dark': "#F29718",  'light': "#FF6A00",  'mirage': "#
 let s:palette.panel     = {'dark': "#14191F",  'light': "#FFFFFF",  'mirage': "#272D38"}
 let s:palette.guide     = {'dark': "#2D3640",  'light': "#D9D8D7",  'mirage': "#3D4751"}
 let s:palette.line      = {'dark': "#151A1E",  'light': "#F3F3F3",  'mirage': "#242B38"}
-let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#343F4C"}
+let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#384452"}
+let s:palette.colorcol  = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#334247"}
 let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
 let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
 
@@ -85,12 +85,12 @@ exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE"
 " Vim Highlighting: (see :help highlight-groups)"{{{
 " ----------------------------------------------------------------------------
 exe "hi! Normal"        .s:fg_fg          .s:bg_bg          .s:fmt_none
-exe "hi! ColorColumn"   .s:fg_fg_idle     .s:bg_selection   .s:fmt_none
+exe "hi! ColorColumn"   .s:fg_none        .s:bg_colorcol    .s:fmt_none
 " Conceal, Cursor, CursorIM
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_accent      .s:bg_line        .s:fmt_none
-exe "hi! LineNr"        .s:fg_guide       .s:bg_none        .s:fmt_none
+exe "hi! LineNr"        .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 
 exe "hi! Directory"     .s:fg_fg_idle     .s:bg_none        .s:fmt_none
 exe "hi! DiffAdd"       .s:fg_string      .s:bg_panel       .s:fmt_none
@@ -128,8 +128,6 @@ exe "hi! Title"         .s:fg_keyword     .s:bg_none        .s:fmt_none
 exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 "   VisualNos"
 exe "hi! WarningMsg"    .s:fg_error       .s:bg_none        .s:fmt_none
-"   Line Numbers
-exe "hi! LineNr"        .s:fg_fg_idle     .s:bg_bg          .s:fmt_none
 
 " TODO LongLineWarning to use variables instead of hardcoding
 hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NONE        ctermbg=NONE        cterm=underline
